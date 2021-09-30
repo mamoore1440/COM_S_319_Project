@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<form>
+    <div class="col">
+        <h1 style="text-align:center;">Register</h1>
+        <input type="text" name="username"  id="username" placeholder="Username" required><br><br>
+        <input type="password" name="password"  id="password" placeholder="Password" required><br><br>
+        <button type="button" onclick=registerUser()>Register</button><br><br>
+    </div>
+</form>
+<script src="index.js"></script>
+</body>
+
+<style>
+    body {
+        text-align: center;
+    }
+    form {
+        border: 1px solid #2e2e2e;
+        width: 35%;
+        display: inline-block;
+    }
+
+    input[type=text], input[type=password] {
+        width: 75%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: lightblue;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 50%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .container {
+        padding: 16px;
+    }
+</style>
+</html>

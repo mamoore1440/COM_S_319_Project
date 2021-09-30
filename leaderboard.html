@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rogue Game</title>
+        <style>
+            #table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 50%;
+                height: 50%;
+                margin: auto;
+                overflow: auto;
+            }
+            
+            td, th {
+                width: 33%;
+                border: 1px solid #dddddd;
+                padding: 8px;
+            }
+
+/*
+            #user{
+                text-align: left;
+            }
+  */          
+        </style>
+    </head>
+    <body style="text-align: center;">
+        <h1>
+            Leaderboard
+        </h1>
+        <table id="table">
+            
+        </table>
+        <script src="index.js"></script>
+        <script>
+
+            function sort(){
+                users.sort((a, b) => {
+                    if (a.highscore > b.highscore) {
+                    return -1;
+                    }
+                    if (a.highscore < b.hoghscore) {
+                    return 1;
+                    }
+                    return 0;
+                });
+            }
+            
+            let table = document.getElementById('table');
+
+            // Add some items
+            var nextPlayer = 0;
+            var loadMore = function() {
+                for (var i = 0; i < 25; i++) {
+                    let player = table.insertRow();
+                    let cell = player.insertCell();
+                    let cell2 = player.insertCell();
+                    let cell3 = player.insertCell();
+                    cell.textContent = users[nextPlayer].name;
+                    cell2.textContent= users[nextPlayer].highscore;
+                    cell3.textContent = users[nextPlayer].rank;
+                    nextPlayer++;
+                    document.body.appendChild(table);
+                }
+            }
+
+            // Detect when scrolled to bottom
+            document.addEventListener('scroll', function() { //this loads immediately because all the values are 0 of table.something i think
+            if (table.scrollTop + table.clientHeight >= table.scrollHeight && nextPlayer != users.length) {
+                loadMore();
+            }
+            });
+
+            //maybe replace with getBoundingClientRect() to see if a certain person is on the screen
+            //compare getBoundingClientRect with viewport width and height, then load more when a person shows up
+            //and update which person should be the trigger to load more
+
+            for(var i = 5; i < 1100; i++){
+                users.push({
+                    name: "jake",
+                    highscore: 1,
+                    rank: i
+                });
+            }
+
+            //sort the list
+            sort();
+
+            // Initially load some items.
+            loadMore();
+
+        </script>
+    </body>
+</html>

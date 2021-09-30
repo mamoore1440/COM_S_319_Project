@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Character Creator</title>
+		<script src="characterCreator.js"></script>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+		</style>
+        <!--<link rel="stylesheet" href="style.css">-->
+    </head>
+	<body style="text-align: center;">
+        <h1>
+            Character Creator
+        </h1>
+		
+		<div style="float: left; width: 33.33%; padding: 10px; height: 500px; background-color:#aaa;">
+			<img src="RedCrusader.png" alt="Red Crusader" width="291" height="490"></div>
+		
+		<div style="float: left; width: 33.34%; padding: 10px; height: 500px;">
+			<!-- name class scoreBoosters -->
+			<form action="map.html" id = "mapLink">
+				<label for="name">NAME</label><br>
+				<input type="text" id="name" name="name" value="John Snow"><br><br>
+				
+				<input type="radio" id="warrior" name="class" value="warrior">
+				<label>Warrior</label><br>
+				<input type="radio" id="ranger" name="class" value="ranger">
+				<label>Ranger</label><br>
+				<input type="radio" id="mage" name="class" value="mage">
+				<label>Mage</label><br><br>
+				
+				
+				<p>Each will add a 5% boost to your score.</p>
+				<input type="checkbox" id="boost1" name="EHB" value="Active">
+				<label for="vehicle1">Enemy Health +25%</label><br>
+				<input type="checkbox" id="boost2" name="EDB" value="Active">
+				<label for="vehicle2">Enemey Damage +10%</label><br>
+				<input type="checkbox" id="boost3" name="CHD" value="Active">
+				<label for="vehicle3">Character Health -10%</label><br>
+				<input type="checkbox" id="boost4" name="CDD" value="Active">
+				<label for="vehicle2">Character Damage -10%</label><br>
+				<input type="checkbox" id="boost5" name="MMB" value="Active">
+				<label for="vehicle2">More Mini Bosses</label><br><br>
+	  
+				<button id = "createButton" onclick="createCharacter()">Create Character</button><br><br>
+			</form> 
+		</div>
+		
+		<div style="float: left; width: 33.33%; padding: 10px; height: 500px; background-color:#aaa;">
+			<img src="Ranger.png" alt="Ranger" width="330" height="450"></div>
+    </body>
+</html>
